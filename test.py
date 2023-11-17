@@ -13,13 +13,7 @@ page = requests.get(url)
 # parser-lxml = Change html to Python friendly format
 # Obtain page's information
 soup = BeautifulSoup(page.text, 'lxml')
+soup
 
-# Obtain information from tag <table>
-table1 = soup.find('table', id='wikitable sortable jquery-tablesorter')
-table1
-
-# Obtain every title of columns with tag <th>
-headers = []
-for i in table1('th'):
-    title = i.text
-    headers.append(title)
+a = soup.find('div', class_='mw-body-content mw-content-ltr')
+print(a)
