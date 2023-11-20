@@ -9,11 +9,15 @@ url = 'https://en.wikipedia.org/wiki/Programming_languages_used_in_most_popular_
 
 # Create object page
 page = requests.get(url)
+print(page)
 
 # parser-lxml = Change html to Python friendly format
 # Obtain page's information
 soup = BeautifulSoup(page.text, 'lxml')
-soup
 
-a = soup.find('div', class_='mw-body-content mw-content-ltr')
+
+#a = soup.find('div', class_='wm_parser_output').find_all('tr')
+#result = {}
+
 print(a)
+
